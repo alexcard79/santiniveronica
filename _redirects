@@ -1,0 +1,2 @@
+# Redirect WWW to non-WWW
+https://www.santiniveronica.it/* https://santiniveronica.it/:splat 301

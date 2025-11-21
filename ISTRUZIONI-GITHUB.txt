@@ -1,0 +1,15 @@
+ISTRUZIONI PER CARICARE SU GITHUB DA TERMINALE
+================================================
+
+1. Apri il Terminale nella cartella dove hai estratto i file del sito
+
+2. Esegui questi comandi UNO ALLA VOLTA:
+
+git init
+git add .
+git commit -m "Primo commit - sito completo"
+git branch -M main
+git remote add origin https://github.com/TUO-USERNAME/sito-santini.git
+git push -u origin main
+
+NOTA: Sostituisci "TUO-USERNAME" con il tuo username GitHub!
