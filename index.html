@@ -362,15 +362,33 @@
             background-size: cover;
             background-position: center 25%;
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             margin-top: 60px;
-            padding-bottom: 12rem;
             position: relative;
             overflow: hidden;
             transition: background-position 0.1s ease-out;
+        }
+
+        /* Container logo nella hero */
+        #hero-logo-container {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .hero-logo-img {
+            max-width: 280px;
+            width: 70%;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
         }
 
         .hero-logo {
@@ -385,8 +403,7 @@
             text-align: center;
             position: relative;
             z-index: 5;
-            margin-top: 0;
-            padding-top: 380px;
+            margin-top: 180px;
         }
 
         .hero-content h1 {
@@ -1074,17 +1091,24 @@
 
         /* ===== TABLET E LAPTOP (769px - 1024px) - MacBook 13" ===== */
         @media (max-width: 1024px) and (min-width: 769px) {
-            .hero > div:first-child {
-                top: 80px !important;
+            #hero-logo-container {
+                top: 60px !important;
+            }
+
+            .hero-logo-img {
+                max-width: 200px !important;
             }
 
             .hero-content {
-                margin-top: 0 !important;
-                padding-top: 400px !important; /* Molto più spazio per evitare sovrapposizione */
+                margin-top: 120px !important;
             }
 
-            .hero {
-                padding-bottom: 10rem !important;
+            .hero-content h1 {
+                font-size: 3.5rem !important;
+            }
+
+            .hero-content p {
+                font-size: 1.4rem !important;
             }
         }
 
@@ -1119,39 +1143,35 @@
                 margin-left: 1rem !important;
             }
 
+            /* ===== HERO MOBILE FIX ===== */
+            #hero-logo-container {
+                top: 100px !important;
+            }
+
+            .hero-logo-img {
+                max-width: 140px !important;
+                width: 40% !important;
+            }
+
+            .hero-content {
+                margin-top: 80px !important;
+            }
+
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 2rem !important;
                 line-height: 1.2;
-                margin-bottom: 0.3rem !important;
+                margin-bottom: 0.5rem !important;
             }
 
             .hero-content p {
-                font-size: 1.2rem;
-                margin-bottom: 1.2rem !important;
-            }
-
-            /* Logo hero responsive - più piccolo e più alto */
-            .hero-logo-img {
-                max-width: 180px !important;
-                width: 45% !important;
-            }
-
-            /* Sposta il contenitore del logo più in alto su mobile */
-            .hero > div:first-child {
-                top: 15px !important;
-            }
-
-            /* Avvicina MOLTISSIMO i testi al logo SOLO su mobile */
-            .hero-content {
-                margin-top: -340px !important;
-                padding-top: 0 !important;
+                font-size: 1.1rem !important;
+                margin-bottom: 1.5rem !important;
             }
 
             /* Disabilita parallax su mobile per performance + MELOGRANI CENTRATI */
             .hero {
                 background-attachment: scroll !important;
                 background-position: center 35% !important;
-                padding-bottom: 8rem !important;
             }
 
             /* Video responsive */
@@ -1257,36 +1277,15 @@
     </div>
 
     <section id="home" class="hero">
-        <div id="hero-logo-container" style="position: absolute; top: 90px; left: 0; right: 0; width: 100%; display: flex; justify-content: center; z-index: 10;">
-            <img src="immagini/logo.png" alt="Santini Veronica Logo" class="hero-logo-img" style="max-width: 320px; width: 70%; filter: none;">
+        <div id="hero-logo-container">
+            <img src="immagini/logo.png" alt="Santini Veronica Logo" class="hero-logo-img">
         </div>
-        <div id="hero-content-container" class="hero-content" style="padding-top: 380px;">
+        <div id="hero-content-container" class="hero-content">
             <h1 class="hero-title">Melograni di Qualità</h1>
             <p class="hero-subtitle">Coltivati con Passione</p>
             <a href="#contatti" class="cta-button hero-button">Vieni a Trovarci</a>
         </div>
     </section>
-    
-    <style>
-        /* MOBILE */
-        @media (max-width: 768px) {
-            #hero-logo-container {
-                top: 5px !important;
-            }
-            #hero-content-container {
-                transform: translateY(-150px) !important;
-            }
-        }
-        /* MACBOOK 13" */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            #hero-logo-container {
-                top: 60px !important;
-            }
-            #hero-content-container {
-                transform: translateY(-100px) !important;
-            }
-        }
-    </style>
 
     <section id="chi-siamo" class="chi-siamo">
         <h2 class="fade-in">Chi Siamo</h2>
@@ -1751,54 +1750,6 @@
             }, { passive: true });
         }
 
-        // ===== FIX RESPONSIVE HERO - FORZA I LAYOUT =====
-        function fixHeroLayout() {
-            const width = window.innerWidth;
-            const heroLogo = document.querySelector('#hero-logo-container');
-            const heroContent = document.querySelector('#hero-content-container');
-            
-            console.log('fixHeroLayout eseguito - width:', width);
-            
-            if (width <= 768) {
-                // MOBILE
-                if (heroLogo) {
-                    heroLogo.style.setProperty('top', '5px', 'important');
-                }
-                if (heroContent) {
-                    heroContent.style.setProperty('transform', 'translateY(-150px)', 'important');
-                }
-            } else if (width > 768 && width <= 1024) {
-                // MACBOOK 13" / TABLET
-                if (heroLogo) {
-                    heroLogo.style.setProperty('top', '60px', 'important');
-                }
-                if (heroContent) {
-                    heroContent.style.setProperty('transform', 'translateY(-100px)', 'important');
-                }
-            } else {
-                // DESKTOP - nessun transform
-                if (heroContent) {
-                    heroContent.style.setProperty('transform', 'translateY(0)', 'important');
-                }
-            }
-        }
-
-        // Esegui SUBITO
-        fixHeroLayout();
-        
-        // Esegui anche quando DOM è pronto
-        document.addEventListener('DOMContentLoaded', fixHeroLayout);
-        
-        // Esegui anche quando TUTTO è caricato (immagini incluse)
-        window.addEventListener('load', fixHeroLayout);
-        
-        // Esegui al resize
-        window.addEventListener('resize', fixHeroLayout);
-        
-        // Esegui anche dopo 500ms per sicurezza
-        setTimeout(fixHeroLayout, 500);
-        // ===== FINE FIX RESPONSIVE =====
-
         // Menu Hamburger Toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1826,42 +1777,3 @@
     </script>
 </body>
 </html>
-
-
-<!-- HERO FIX OVERRIDES -->
-<style>
-/* Mobile adjustments */
-@media (max-width: 768px){
-  #hero-content-container.hero-content{
-    padding-top: 520px !important; /* much lower */
-  }
-  .hero-logo-img{
-    margin-top: 180px !important;
-    max-width: 130px !important;
-  }
-  .hero-title{
-    font-size: 32px !important;
-  }
-  .hero-subtitle{
-    font-size: 20px !important;
-  }
-  .hero-button{
-    margin-top: 40px !important;
-  }
-}
-/* Laptop adjustments */
-@media (min-width: 769px) and (max-width: 1500px){
-  #hero-content-container.hero-content{
-    padding-top: 420px !important;
-  }
-  .hero-logo-img{
-    max-width: 200px !important;
-  }
-  .hero-title{
-    font-size: 60px !important;
-  }
-  .hero-subtitle{
-    font-size: 28px !important;
-  }
-}
-</style>
