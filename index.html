@@ -1080,7 +1080,7 @@
 
             .hero-content {
                 margin-top: 0 !important;
-                padding-top: 400px !important; /* Molto più spazio per evitare sovrapposizione */
+                padding-top: 480px !important; /* Aumentato per evitare sovrapposizione con logo */
             }
 
             .hero {
@@ -1143,7 +1143,7 @@
 
             /* Avvicina MOLTISSIMO i testi al logo SOLO su mobile */
             .hero-content {
-                margin-top: -340px !important;
+                margin-top: -380px !important;
                 padding-top: 0 !important;
             }
 
@@ -1260,33 +1260,12 @@
         <div id="hero-logo-container" style="position: absolute; top: 90px; left: 0; right: 0; width: 100%; display: flex; justify-content: center; z-index: 10;">
             <img src="immagini/logo.png" alt="Santini Veronica Logo" class="hero-logo-img" style="max-width: 320px; width: 70%; filter: none;">
         </div>
-        <div id="hero-content-container" class="hero-content" style="padding-top: 380px;">
+        <div id="hero-content-container" class="hero-content">
             <h1 class="hero-title">Melograni di Qualità</h1>
             <p class="hero-subtitle">Coltivati con Passione</p>
             <a href="#contatti" class="cta-button hero-button">Vieni a Trovarci</a>
         </div>
     </section>
-    
-    <style>
-        /* MOBILE - scritte più vicine al logo */
-        @media (max-width: 768px) {
-            #hero-logo-container {
-                top: 5px !important;
-            }
-            #hero-content-container {
-                transform: translateY(-220px) !important;
-            }
-        }
-        /* MACBOOK 13" - scritte più in basso per evitare sovrapposizione */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            #hero-logo-container {
-                top: 60px !important;
-            }
-            #hero-content-container {
-                transform: translateY(0px) !important;
-            }
-        }
-    </style>
 
     <section id="chi-siamo" class="chi-siamo">
         <h2 class="fade-in">Chi Siamo</h2>
