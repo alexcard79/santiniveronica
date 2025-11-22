@@ -1274,8 +1274,7 @@
                 top: 5px !important;
             }
             #hero-content-container {
-                margin-top: -500px !important;
-                padding-top: 0 !important;
+                transform: translateY(-150px) !important;
             }
         }
         /* MACBOOK 13" */
@@ -1284,8 +1283,7 @@
                 top: 60px !important;
             }
             #hero-content-container {
-                margin-top: 0 !important;
-                padding-top: 520px !important;
+                transform: translateY(-100px) !important;
             }
         }
     </style>
@@ -1762,31 +1760,25 @@
             console.log('fixHeroLayout eseguito - width:', width);
             
             if (width <= 768) {
-                // MOBILE - VALORI DRASTICI
+                // MOBILE
                 if (heroLogo) {
                     heroLogo.style.setProperty('top', '5px', 'important');
                 }
                 if (heroContent) {
-                    heroContent.style.setProperty('margin-top', '-500px', 'important');
-                    heroContent.style.setProperty('padding-top', '0', 'important');
+                    heroContent.style.setProperty('transform', 'translateY(-150px)', 'important');
                 }
             } else if (width > 768 && width <= 1024) {
-                // MACBOOK 13" / TABLET - VALORI DRASTICI
+                // MACBOOK 13" / TABLET
                 if (heroLogo) {
                     heroLogo.style.setProperty('top', '60px', 'important');
                 }
                 if (heroContent) {
-                    heroContent.style.setProperty('margin-top', '0', 'important');
-                    heroContent.style.setProperty('padding-top', '520px', 'important');
+                    heroContent.style.setProperty('transform', 'translateY(-100px)', 'important');
                 }
             } else {
-                // DESKTOP
-                if (heroLogo) {
-                    heroLogo.style.setProperty('top', '90px', 'important');
-                }
+                // DESKTOP - nessun transform
                 if (heroContent) {
-                    heroContent.style.setProperty('margin-top', '0', 'important');
-                    heroContent.style.setProperty('padding-top', '380px', 'important');
+                    heroContent.style.setProperty('transform', 'translateY(0)', 'important');
                 }
             }
         }
