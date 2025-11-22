@@ -356,52 +356,21 @@
         }
 
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
                         url('immagini/Hero2.jpg');
             background-size: cover;
             background-position: center 25%;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
             text-align: center;
             color: white;
             margin-top: 60px;
+            padding-bottom: 12rem;
             position: relative;
             overflow: hidden;
             transition: background-position 0.1s ease-out;
-        }
-
-        .hero-inner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            z-index: 5;
-        }
-
-        .hero-logo-img {
-            max-width: 320px;
-            width: 70%;
-            margin-bottom: 2rem;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            letter-spacing: 3px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            font-weight: 300;
-            letter-spacing: 2px;
         }
 
         .hero-logo {
@@ -839,20 +808,25 @@
             animation: bounceIn 1s ease-out 0.9s both;
         }
 
-        /* Stili base per elementi hero - visibili con animazione */
-        .hero-logo-img {
+        /* Stili base per elementi hero senza animazione */
+        .hero-logo-img, .hero-title, .hero-subtitle, .hero-button {
+            opacity: 0;
+        }
+
+        /* Quando hanno la classe active, diventano visibili e animati */
+        .hero-logo-img.active {
             animation: zoomInLogo 1.2s ease-out forwards;
         }
 
-        .hero-title {
+        .hero-title.active {
             animation: slideUpTitle 1s ease-out 0.3s both;
         }
 
-        .hero-subtitle {
+        .hero-subtitle.active {
             animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        .hero-button {
+        .hero-button.active {
             animation: bounceIn 1s ease-out 0.9s both;
         }
 
@@ -1100,16 +1074,17 @@
 
         /* ===== TABLET E LAPTOP (769px - 1024px) - MacBook 13" ===== */
         @media (max-width: 1024px) and (min-width: 769px) {
-            .hero-logo-img {
-                max-width: 280px;
+            .hero > div:first-child {
+                top: 80px !important;
             }
 
-            .hero-title {
-                font-size: 3.5rem;
+            .hero-content {
+                margin-top: 0 !important;
+                padding-top: 480px !important; /* Aumentato per evitare sovrapposizione con logo */
             }
 
-            .hero-subtitle {
-                font-size: 1.4rem;
+            .hero {
+                padding-bottom: 10rem !important;
             }
         }
 
@@ -1144,28 +1119,39 @@
                 margin-left: 1rem !important;
             }
 
-            /* Hero mobile */
-            .hero-logo-img {
-                max-width: 180px;
-                width: 50%;
-                margin-bottom: 1rem;
-            }
-
-            .hero-title {
-                font-size: 2.2rem;
+            .hero-content h1 {
+                font-size: 2rem;
                 line-height: 1.2;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.3rem !important;
             }
 
-            .hero-subtitle {
+            .hero-content p {
                 font-size: 1.2rem;
-                margin-bottom: 1.2rem;
+                margin-bottom: 1.2rem !important;
+            }
+
+            /* Logo hero responsive - più piccolo e più alto */
+            .hero-logo-img {
+                max-width: 180px !important;
+                width: 45% !important;
+            }
+
+            /* Sposta il contenitore del logo più in alto su mobile */
+            .hero > div:first-child {
+                top: 15px !important;
+            }
+
+            /* Avvicina MOLTISSIMO i testi al logo SOLO su mobile */
+            .hero-content {
+                margin-top: -380px !important;
+                padding-top: 0 !important;
             }
 
             /* Disabilita parallax su mobile per performance + MELOGRANI CENTRATI */
             .hero {
                 background-attachment: scroll !important;
                 background-position: center 35% !important;
+                padding-bottom: 8rem !important;
             }
 
             /* Video responsive */
@@ -1271,8 +1257,10 @@
     </div>
 
     <section id="home" class="hero">
-        <div class="hero-inner">
-            <img src="immagini/logo.png" alt="Santini Veronica Logo" class="hero-logo-img">
+        <div id="hero-logo-container" style="position: absolute; top: 90px; left: 0; right: 0; width: 100%; display: flex; justify-content: center; z-index: 10;">
+            <img src="immagini/logo.png" alt="Santini Veronica Logo" class="hero-logo-img" style="max-width: 320px; width: 70%; filter: none;">
+        </div>
+        <div id="hero-content-container" class="hero-content">
             <h1 class="hero-title">Melograni di Qualità</h1>
             <p class="hero-subtitle">Coltivati con Passione</p>
             <a href="#contatti" class="cta-button hero-button">Vieni a Trovarci</a>
@@ -1670,6 +1658,36 @@
             counterObserver.observe(statsSection);
         }
 
+        // Observer per la Hero - animazioni ripetibili
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const heroLogo = document.querySelector('.hero-logo-img');
+                const heroTitle = document.querySelector('.hero-title');
+                const heroSubtitle = document.querySelector('.hero-subtitle');
+                const heroButton = document.querySelector('.hero-button');
+
+                if (entry.isIntersecting) {
+                    // Aggiungi le animazioni
+                    heroLogo.classList.add('active');
+                    heroTitle.classList.add('active');
+                    heroSubtitle.classList.add('active');
+                    heroButton.classList.add('active');
+                } else {
+                    // Rimuovi le animazioni quando esci
+                    heroLogo.classList.remove('active');
+                    heroTitle.classList.remove('active');
+                    heroSubtitle.classList.remove('active');
+                    heroButton.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        // Osserva la hero
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+
         // Effetto Parallax sui melograni della Hero - Ultra fluido
         let lastScrollY = 0;
         let ticking = false;
@@ -1711,6 +1729,49 @@
                 }
             }, { passive: true });
         }
+
+        // ===== FIX RESPONSIVE HERO - FORZA I LAYOUT =====
+        function fixHeroLayout() {
+            const width = window.innerWidth;
+            const heroLogo = document.querySelector('#hero-logo-container');
+            const heroContent = document.querySelector('#hero-content-container');
+            
+            console.log('fixHeroLayout eseguito - width:', width);
+            
+            if (width <= 768) {
+                // MOBILE
+                if (heroLogo) {
+                }
+                if (heroContent) {
+                }
+            } else if (width > 768 && width <= 1024) {
+                // MACBOOK 13" / TABLET
+                if (heroLogo) {
+                }
+                if (heroContent) {
+                }
+            } else {
+                // DESKTOP - nessun transform
+                if (heroContent) {
+                }
+            }
+        }
+
+        // Esegui SUBITO
+        fixHeroLayout();
+        
+        // Esegui anche quando DOM è pronto
+        document.addEventListener('DOMContentLoaded', fixHeroLayout);
+        
+        // Esegui anche quando TUTTO è caricato (immagini incluse)
+        window.addEventListener('load', fixHeroLayout);
+        
+        // Esegui al resize
+        window.addEventListener('resize', fixHeroLayout);
+        
+        // Esegui anche dopo 500ms per sicurezza
+        setTimeout(fixHeroLayout, 500);
+        // ===== FINE FIX RESPONSIVE =====
 
         // Menu Hamburger Toggle
         const menuToggle = document.getElementById('menuToggle');
