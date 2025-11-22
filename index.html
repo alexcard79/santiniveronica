@@ -1182,36 +1182,6 @@
             }
         }
     </style>
-
-<style>
-/* HERO FIX START */
-@media (max-width: 1024px) and (min-width: 769px) {
-    #hero-logo-container { top: 120px !important; }
-    #hero-content-container { margin-top: 40px !important; }
-}
-@media (max-width: 768px) {
-    #hero-logo-container { top: 80px !important; }
-    #hero-content-container { margin-top: 20px !important; }
-}
-/* HERO FIX END */
-</style>
-
-
-<style>
-.hero {
-    height: 100vh;
-    background: url('immagini/Hero2.jpg') center center/cover no-repeat;
-    display:flex; flex-direction:column; justify-content:center; align-items:center;
-    text-align:center;
-}
-.hero-content { margin-top:20px; }
-@media (max-width:768px){
-  .hero { height:90vh; }
-  .hero-logo-img{max-width:150px;}
-  .hero-content h1{font-size:1.8rem;}
-}
-</style>
-
 </head>
 <body>
     <header>
@@ -1856,3 +1826,42 @@
     </script>
 </body>
 </html>
+
+
+<!-- HERO FIX OVERRIDES -->
+<style>
+/* Mobile adjustments */
+@media (max-width: 768px){
+  #hero-content-container.hero-content{
+    padding-top: 520px !important; /* much lower */
+  }
+  .hero-logo-img{
+    margin-top: 180px !important;
+    max-width: 130px !important;
+  }
+  .hero-title{
+    font-size: 32px !important;
+  }
+  .hero-subtitle{
+    font-size: 20px !important;
+  }
+  .hero-button{
+    margin-top: 40px !important;
+  }
+}
+/* Laptop adjustments */
+@media (min-width: 769px) and (max-width: 1500px){
+  #hero-content-container.hero-content{
+    padding-top: 420px !important;
+  }
+  .hero-logo-img{
+    max-width: 200px !important;
+  }
+  .hero-title{
+    font-size: 60px !important;
+  }
+  .hero-subtitle{
+    font-size: 28px !important;
+  }
+}
+</style>
