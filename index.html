@@ -33,6 +33,592 @@
     
     <!-- Google Analytics (sostituisci G-XXXXXXXXXX con il tuo ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
+    <!-- Schema.org LocalBusiness Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://santiniveronica.it",
+        "name": "Santini Veronica - Azienda Agricola",
+        "description": "Azienda agricola specializzata nella coltivazione di melograni di qualità in Umbria",
+        "url": "https://santiniveronica.it",
+        "telephone": "+39-334-368-1097",
+        "email": "info@santiniveronica.it",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Loc. San Sabino, 18",
+            "addressLocality": "Giano dell'Umbria",
+            "addressRegion": "PG",
+            "postalCode": "06030",
+            "addressCountry": "IT"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "42.90",
+            "longitude": "12.50"
+        },
+        "image": "https://santiniveronica.it/immagini/Hero2.jpg",
+        "priceRange": "€€",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=100064139351059",
+            "https://www.instagram.com/aziendasantiniveronica/"
+        ]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+
+    <section id="chi-siamo" class="chi-siamo">
+        <h2 class="fade-in">Chi Siamo</h2>
+        <div class="chi-siamo-content">
+            <div class="chi-siamo-text slide-left">
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>Santini Veronica - Azienda Agricola</strong> è un'impresa familiare situata a Giano dell'Umbria, specializzata nella coltivazione e produzione di melograni di eccellenza.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    I nostri frutteti si estendono sulle dolci colline umbre, dove ogni pianta viene curata con dedizione seguendo metodi tradizionali e sostenibili.
+                </p>
+                <p>
+                    La nostra missione è offrire melograni freschi e succo di melograno di altissima qualità, preservando il sapore autentico e le proprietà benefiche di questo frutto straordinario.
+                </p>
+            </div>
+            <div class="chi-siamo-image slide-right" style="background-image: url('immagini/chi-siamo-2.jpg'); background-size: cover; background-position: center;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatore Animato -->
+    <section class="stats-section">
+        <h2 style="color: white; margin-bottom: 1rem;">I Nostri Numeri</h2>
+        <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">Anni di passione e dedizione</p>
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="2500">0</div>
+                <div class="stat-label">Alberi di Melograno</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Anni di Esperienza</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="stat-number">100<span style="font-size: 2rem;">%</span></div>
+                <div class="stat-label">Naturale</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prodotti">
+        <h2 class="fade-in">I Nostri Prodotti</h2>
+        <div class="prodotti-grid">
+            <div class="prodotto-card zoom-in">
+                <div class="prodotto-image" style="background-image: url('immagini/frutto-02.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="prodotto-info">
+                    <h3>Melograni Freschi</h3>
+                    <p>Raccolti a mano al momento giusto di maturazione, i nostri melograni sono dolci, succosi e ricchi di antiossidanti. Perfetti da gustare freschi o per le tue ricette.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                        <li>Raccolti al momento ottimale</li>
+                        <li>Varietà selezionate</li>
+                        <li>100% naturali</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prodotto-card zoom-in">
+                <div class="prodotto-image" style="background-image: url('immagini/succo-di-melograno-2.jpg'); background-size: cover; background-position: center;"></div>
+                <div class="prodotto-info">
+                    <h3>Succo di Melograno</h3>
+                    <p>Spremuto a freddo dai nostri melograni, il succo mantiene intatte tutte le proprietà nutritive. Senza conservanti, zuccheri aggiunti o acqua. Pura bontà in bottiglia.</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                        <li>100% puro succo</li>
+                        <li>Spremuto a freddo</li>
+                        <li>Nessun additivo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perché Sceglierci -->
+    <section class="why-choose">
+        <h2 class="fade-in">Perché Scegliere i Nostri Melograni</h2>
+        <div class="features-grid">
+            <div class="feature-card zoom-in">
+                <div class="feature-icon">🌱</div>
+                <h3 class="feature-title">100% Naturale</h3>
+                <p class="feature-text">Coltivati senza pesticidi chimici, seguendo metodi tradizionali e biologici</p>
+            </div>
+            <div class="feature-card zoom-in">
+                <div class="feature-icon">🚜</div>
+                <h3 class="feature-title">Tradizione</h3>
+                <p class="feature-text">Tecniche di coltivazione tramandate da generazioni nelle colline umbre</p>
+            </div>
+            <div class="feature-card zoom-in">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Freschezza</h3>
+                <p class="feature-text">Raccolti a mano al momento giusto di maturazione per garantire la massima qualità</p>
+            </div>
+            <div class="feature-card zoom-in">
+                <div class="feature-icon">💚</div>
+                <h3 class="feature-title">Sostenibilità</h3>
+                <p class="feature-text">Rispetto per l'ambiente e pratiche agricole eco-sostenibili</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="frutteto" class="frutteto">
+        <h2 class="fade-in">Il Nostro Frutteto</h2>
+        <p class="fade-in" style="text-align: center; font-size: 1.3rem; margin-bottom: 2rem; font-weight: 300;">
+            Scopri dove nascono i nostri melograni, tra filari curati e paesaggi incontaminati
+        </p>
+        
+        <!-- Video del Frutteto -->
+        <div class="video-container zoom-in" style="max-width: 900px; margin: 0 auto 3rem; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.2);">
+            <video controls preload="metadata" playsinline style="width: 100%; height: auto; display: block;" poster="immagini/sfondo-video.png">
+                <source src="video/video-frutteto.mp4" type="video/mp4">
+                Il tuo browser non supporta la riproduzione video.
+            </video>
+        </div>
+        <p style="text-align: center; margin-bottom: 4rem; font-style: italic; color: #555; font-size: 0.95rem;">
+            🎬 Un tour tra i nostri melograni
+        </p>
+        
+        <h3 class="fade-in" style="text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #9AB856; margin: 2rem 0 2rem;">
+            Galleria Fotografica
+        </h3>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/frutteto-01.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/frutteto-02.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/frutteto-03.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/frutteto-04.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/frutto-01.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/frutto-03.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/new-1.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/new-2.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="gallery-item zoom-in" style="background-image: url('immagini/new-3.jpg'); background-size: cover; background-position: center;"></div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-style: italic; color: #555; font-size: 0.95rem;">
+            Foto autentiche del nostro frutteto
+        </p>
+
+    </section>
+
+    <!-- Mappa Interattiva -->
+    <section class="map-section">
+        <h2 class="fade-in" style="color: #E89033;">Come Raggiungerci</h2>
+        <p class="fade-in" style="text-align: center; font-size: 1.2rem; margin-bottom: 1rem; color: #666;">Siamo nel cuore dell'Umbria</p>
+        <div class="map-container zoom-in">
+            <iframe 
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=VH2H%2BRX+Giano+dell%27Umbria%2C+Provincia+di+Perugia&zoom=15"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <section id="contatti" class="contatti">
+        <h2>Vieni a Trovarci</h2>
+        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 1rem;">
+            I nostri prodotti sono disponibili direttamente in azienda
+        </p>
+        <div class="contatti-grid">
+            <!-- TELEFONO (SINISTRA) -->
+            <a href="tel:+393343681097" style="text-decoration: none; color: white; display: block;">
+                <div class="contatto-item">
+                    <div class="contatto-icon">
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="white">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </div>
+                    <h3>Telefono</h3>
+                    <p style="margin: 0; font-size: 1.1rem; font-weight: 400; line-height: 1.6;">+39 334 368 1097</p>
+                    <div style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <p style="margin: 0; font-size: 0.9rem; opacity: 0.9; font-weight: 500;">Chiama ora</p>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- INDIRIZZO (CENTRO) -->
+            <a href="https://www.google.com/maps/search/?api=1&query=VH2H%2BRX+Giano+dell%27Umbria%2C+Provincia+di+Perugia" target="_blank" style="text-decoration: none; color: white; display: block;">
+                <div class="contatto-item">
+                    <div class="contatto-icon">
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="white">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Indirizzo</h3>
+                    <p style="margin: 0; font-size: 1rem; font-weight: 400; line-height: 1.5;">Loc. San Sabino, 18<br>06030 Giano dell'Umbria (PG)<br>Italia</p>
+                    <div style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <p style="margin: 0; font-size: 0.9rem; opacity: 0.9; font-weight: 500;">Apri Maps</p>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- EMAIL (DESTRA) -->
+            <a href="mailto:info@santiniveronica.it" style="text-decoration: none; color: white; display: block;">
+                <div class="contatto-item">
+                    <div class="contatto-icon">
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="white">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p style="margin: 0; font-size: 1.1rem; font-weight: 400; line-height: 1.6;">info@santiniveronica.it</p>
+                    <div style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <p style="margin: 0; font-size: 0.9rem; opacity: 0.9; font-weight: 500;">Invia messaggio</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Pulsante WhatsApp flottante -->
+    <a href="https://wa.me/393343681097" class="whatsapp-float" target="_blank" title="Contattaci su WhatsApp">
+        <img src="immagini/whatsapp.png" alt="WhatsApp">
+    </a>
+
+    <!-- Lightbox per ingrandire immagini -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-arrow lightbox-arrow-left" id="lightbox-prev">‹</div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Immagine ingrandita">
+        </div>
+        <div class="lightbox-arrow lightbox-arrow-right" id="lightbox-next">›</div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 9</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Santini Veronica - Azienda Agricola - P.IVA 03499070542</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Loc. San Sabino, 18 - 06030 Giano dell'Umbria (PG) - Italia</p>
+        <p style="margin-top: 1rem;">
+            <a href="privacy-policy.html" style="color: white; text-decoration: none; opacity: 0.8; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Privacy Policy & Cookie Policy</a>
+        </p>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Elemento entra nella viewport - aggiungi animazione SOLO SE NON è già stato animato
+                    if (!entry.target.classList.contains('visible')) {
+                        entry.target.classList.add('visible');
+                    }
+                }
+                // NON rimuovere 'visible' quando esce dalla viewport - mantiene lo stato
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-left, .slide-right, .zoom-in').forEach((el) => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Lightbox carousel con navigazione
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        // Array di tutte le immagini della galleria
+        let galleryImages = [];
+        let currentImageIndex = 0;
+
+        // Raccogli tutte le immagini della galleria
+        function initGallery() {
+            const galleryItems = document.querySelectorAll('.gallery-item, .chi-siamo-image, .prodotto-image');
+            galleryImages = Array.from(galleryItems).map(item => {
+                const bgImage = window.getComputedStyle(item).backgroundImage;
+                return bgImage.slice(5, -2); // Estrae l'URL
+            });
+        }
+
+        // Mostra immagine nel lightbox
+        function showLightboxImage(index) {
+            // Circular navigation (infinito)
+            if (index < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            } else if (index >= galleryImages.length) {
+                currentImageIndex = 0;
+            } else {
+                currentImageIndex = index;
+            }
+
+            lightboxImg.src = galleryImages[currentImageIndex];
+            lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+        }
+
+        // Click sulle immagini per aprire lightbox
+        document.addEventListener('DOMContentLoaded', function() {
+            initGallery();
+
+            document.querySelectorAll('.gallery-item, .chi-siamo-image, .prodotto-image').forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    currentImageIndex = index;
+                    showLightboxImage(currentImageIndex);
+                    lightbox.classList.add('active');
+                });
+            });
+        });
+
+        // Freccia sinistra (precedente)
+        lightboxPrev.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showLightboxImage(currentImageIndex - 1);
+        });
+
+        // Freccia destra (successiva)
+        lightboxNext.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showLightboxImage(currentImageIndex + 1);
+        });
+
+        // Chiudi lightbox cliccando sulla X
+        lightboxClose.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+        });
+
+        // Chiudi lightbox cliccando sullo sfondo
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Navigazione con tastiera
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                showLightboxImage(currentImageIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                showLightboxImage(currentImageIndex + 1);
+            }
+        });
+
+        // Animazione contatore numeri
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 secondi
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            };
+
+            updateCounter();
+        }
+
+        // Observer per attivare il contatore quando visibile
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number[data-target]');
+                    counters.forEach(counter => {
+                        if (!counter.classList.contains('counted')) {
+                            animateCounter(counter);
+                            counter.classList.add('counted');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Osserva la sezione stats
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            counterObserver.observe(statsSection);
+        }
+
+        // Observer per la Hero - animazioni ripetibili
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const heroLogo = document.querySelector('.hero-logo-img');
+                const heroTitle = document.querySelector('.hero-title');
+                const heroSubtitle = document.querySelector('.hero-subtitle');
+                const heroButton = document.querySelector('.hero-button');
+
+                if (entry.isIntersecting) {
+                    // Aggiungi le animazioni
+                    heroLogo.classList.add('active');
+                    heroTitle.classList.add('active');
+                    heroSubtitle.classList.add('active');
+                    heroButton.classList.add('active');
+                } else {
+                    // Rimuovi le animazioni quando esci
+                    heroLogo.classList.remove('active');
+                    heroTitle.classList.remove('active');
+                    heroSubtitle.classList.remove('active');
+                    heroButton.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        // Osserva la hero
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+
+        // Effetto Parallax sui melograni della Hero - Ultra fluido
+        let lastScrollY = 0;
+        let ticking = false;
+        
+        // Disabilita parallax su mobile
+        const isMobile = window.innerWidth <= 768;
+        
+        function updateParallax() {
+            // Skip su mobile per performance
+            if (isMobile) return;
+            
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            
+            if (hero && scrolled < window.innerHeight) {
+                // Parallax effect ultra fluido
+                const parallaxSpeed = 0.3;
+                const translateY = scrolled * parallaxSpeed;
+                
+                // Usa transform invece di background-position per performance migliori
+                hero.style.backgroundPositionY = translateY + 'px';
+            }
+            
+            lastScrollY = scrolled;
+        }
+        
+        // Inizializza il parallax al caricamento (solo desktop)
+        if (!isMobile) {
+            updateParallax();
+            
+            // Usa passive listener per performance migliori
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateParallax();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        // ===== FIX RESPONSIVE HERO - FORZA I LAYOUT =====
+        function fixHeroLayout() {
+            const width = window.innerWidth;
+            const heroLogo = document.querySelector('#hero-logo-container');
+            const heroContent = document.querySelector('#hero-content-container');
+            
+            console.log('fixHeroLayout eseguito - width:', width);
+            
+            if (width <= 768) {
+                // MOBILE
+                if (heroLogo) {
+                    heroLogo.style.setProperty('top', '5px', 'important');
+                }
+                if (heroContent) {
+                    heroContent.style.setProperty('transform', 'translateY(-150px)', 'important');
+                }
+            } else if (width > 768 && width <= 1024) {
+                // MACBOOK 13" / TABLET
+                if (heroLogo) {
+                    heroLogo.style.setProperty('top', '60px', 'important');
+                }
+                if (heroContent) {
+                    heroContent.style.setProperty('transform', 'translateY(-100px)', 'important');
+                }
+            } else {
+                // DESKTOP - nessun transform
+                if (heroContent) {
+                    heroContent.style.setProperty('transform', 'translateY(0)', 'important');
+                }
+            }
+        }
+
+        // Esegui SUBITO
+        fixHeroLayout();
+        
+        // Esegui anche quando DOM è pronto
+        document.addEventListener('DOMContentLoaded', fixHeroLayout);
+        
+        // Esegui anche quando TUTTO è caricato (immagini incluse)
+        window.addEventListener('load', fixHeroLayout);
+        
+        // Esegui al resize
+        window.addEventListener('resize', fixHeroLayout);
+        
+        // Esegui anche dopo 500ms per sicurezza
+        setTimeout(fixHeroLayout, 500);
+        // ===== FINE FIX RESPONSIVE =====
+
+        // Menu Hamburger Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Chiudi menu quando clicchi su un link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // Chiudi menu quando clicchi fuori
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
