@@ -1736,8 +1736,6 @@
         
         // Inizializza il parallax al caricamento (solo desktop)
         if (!isMobile) {
-            updateParallax();
-            
             // Usa passive listener per performance migliori
             window.addEventListener('scroll', function() {
                 if (!ticking) {
