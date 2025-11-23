@@ -1738,9 +1738,12 @@
         
         // Inizializza il parallax al caricamento (solo desktop)
         if (!isMobile) {
-            // Sincronizza il parallax con la posizione di scroll attuale quando la pagina si carica
-            window.addEventListener('load', function() {
-                updateParallax();
+            // Reset della posizione del background all'inizio per evitare scatti
+            window.addEventListener('DOMContentLoaded', function() {
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.backgroundPositionY = '0px';
+                }
             });
             
             // Usa passive listener per performance migliori
