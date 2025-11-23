@@ -1717,12 +1717,6 @@
         // Disabilita parallax su mobile
         const isMobile = window.innerWidth <= 768;
         
-        // IMPORTANTE: resetta scroll all'inizio quando la pagina si carica
-        // Questo evita problemi con il parallax quando ricarichi la pagina scrollato
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
-        
         function updateParallax() {
             // Skip su mobile per performance
             if (isMobile) return;
@@ -1744,6 +1738,11 @@
         
         // Inizializza il parallax al caricamento (solo desktop)
         if (!isMobile) {
+            // Sincronizza il parallax con la posizione di scroll attuale quando la pagina si carica
+            window.addEventListener('load', function() {
+                updateParallax();
+            });
+            
             // Usa passive listener per performance migliori
             window.addEventListener('scroll', function() {
                 if (!ticking) {
