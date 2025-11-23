@@ -1089,8 +1089,8 @@
             border: 0;
         }
 
-        /* ===== TABLET E LAPTOP (769px - 1680px) - MacBook 13" e Laptop ===== */
-        @media (max-width: 1680px) and (min-width: 769px) {
+        /* ===== LAPTOP E TABLET (769px - 1919px) ===== */
+        @media (max-width: 1919px) and (min-width: 769px) {
             /* ===== HERO LAPTOP FIX ===== */
             #hero-logo-container {
                 top: 70px !important;
@@ -1716,6 +1716,12 @@
         
         // Disabilita parallax su mobile
         const isMobile = window.innerWidth <= 768;
+        
+        // IMPORTANTE: resetta scroll all'inizio quando la pagina si carica
+        // Questo evita problemi con il parallax quando ricarichi la pagina scrollato
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
         
         function updateParallax() {
             // Skip su mobile per performance
