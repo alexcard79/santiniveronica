@@ -1775,6 +1775,41 @@
                 }
             });
         }
+
+        // ===== FIX FORZATO PER LAPTOP - BYPASSA TUTTO =====
+        function forceHeroLayoutLaptop() {
+            const width = window.innerWidth;
+            
+            // Solo su laptop (769-1024px)
+            if (width >= 769 && width <= 1024) {
+                const heroLogo = document.querySelector('.hero-logo-img');
+                const heroContent = document.querySelector('#hero-content-container');
+                
+                if (heroLogo) {
+                    heroLogo.style.cssText = 'max-width: 160px !important; width: 160px !important; filter: none !important;';
+                }
+                
+                if (heroContent) {
+                    heroContent.style.cssText = 'margin-top: 100px !important; text-align: center; position: relative; z-index: 5;';
+                }
+            }
+        }
+        
+        // Esegui subito
+        forceHeroLayoutLaptop();
+        
+        // Esegui quando DOM è pronto
+        document.addEventListener('DOMContentLoaded', forceHeroLayoutLaptop);
+        
+        // Esegui quando tutto è caricato
+        window.addEventListener('load', forceHeroLayoutLaptop);
+        
+        // Esegui al resize
+        window.addEventListener('resize', forceHeroLayoutLaptop);
+        
+        // Esegui anche dopo mezzo secondo per sicurezza
+        setTimeout(forceHeroLayoutLaptop, 500);
+        // ===== FINE FIX FORZATO =====
     </script>
 </body>
 </html>
